@@ -75,19 +75,32 @@
                 *{
                     font-size: 1.2rem;
                 }
+                html{
+                    height: fit-content;
+                }
                 body{
                     grid-template-areas: "header"
-                                        "article"
+                                        "left"
+                                        "main"
+                                        "right"
                                         "footer";
                     grid-template-columns: 1fr;
-                    grid-template-rows: 1fr 3fr 1fr;
-                    gap: 5px;
-                    max-height: 100vh;
-                    max-width: 100vw;
-                    display: grid;
+                    grid-template-rows: none;
+                    max-height: 1000vh;
                 }
-                .not-for-mobile {
-                    display: none;
+                header {
+                    height: 100px;
+                }
+                #left {
+                    height: 150px;
+                }
+                footer#flex{
+                    flex-direction: column;
+                    height: 500px;
+                }
+                #flex > div {
+                    width: 80%;
+                    margin: 2px;
                 }
             }
         </style>
