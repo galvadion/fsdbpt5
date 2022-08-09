@@ -25,3 +25,4 @@ let aString = "1";
 let result = aNumber+ aString;
 
 console.log(result)
+
