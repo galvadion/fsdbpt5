@@ -28,3 +28,25 @@ else if(number2%3 == 0 )  // si no, verificicar si se cumple esto
 else if(number2%5 == 0 ) // repeat
    console.log("Es múltiplo de 5") //idem
 else console.log("No es múltiplo de ninguno de esos 2") // si no cumple ninguno, caigo acá
+
+excersiseNumber++;
+console.log(`--- Excercise number ${excersiseNumber} ---`)
+
+let valueA =  parseInt(prompt("Ingrese el número de A"))
+let valueB =  parseInt(prompt("Ingrese el número de B"))
+let valueC =  parseInt(prompt("Ingrese el número de C"))
+
+let discriminant = valueB*valueB - 4*valueA*valueC
+
+if(discriminant<0)
+    console.log("No hay raices reales")
+else if(discriminant>0){
+    let rootOne = ((-1)*valueB + Math.sqrt(discriminant))/(2*valueA)
+    let rootTwo = ((-1)*valueB - Math.sqrt(discriminant))/(2*valueA)
+    console.log(`Las raices son ${rootOne} and ${rootTwo}`)
+}else{
+    let root = (-1)*valueB/(2*valueA)
+    console.log(`La raíz es ${root}`)
+}
+    
+    
