@@ -52,21 +52,24 @@ else if(discriminant>0){
 excersiseNumber++;
 console.log(`--- Excercise number ${excersiseNumber} ---`)
 
-let inputOfKey = prompt("Ingrese una opción")
-
-switch (inputOfKey){
-    case 'a':
-        console.log("Tocar opción a")
-        break
-    case 'b':
-        console.log("Tocar opción b")
-        break
-    case 'c':
-        console.log("Tocar opción c")
-        break
-    case 'd':
-        console.log("Terminar")
-        break
-    default:
-        console.log("Cualca")
-}
+let isNotOver = true;
+do {
+    let inputOfKey = prompt("Ingrese una opción")
+    switch (inputOfKey){
+        case 'a':
+            console.log("Tocar opción a")
+            break
+        case 'b':
+            console.log("Tocar opción b")
+            break
+        case 'c':
+            console.log("Tocar opción c")
+            break
+        case 'd':
+            console.log("Terminar")
+            isNotOver= false;
+            break
+        default:
+            console.log("Cualca")
+    }
+}while(isNotOver)
