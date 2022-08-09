@@ -86,7 +86,8 @@ let divisibiles = []
 
 while(maxPosibleDivisible>=0){
     if(numberForExcercise4%maxPosibleDivisible==0){
-        divisibiles=divisibiles.concat(maxPosibleDivisible)
+        divisibiles.push(maxPosibleDivisible);
+       // divisibiles=divisibiles.concat(maxPosibleDivisible)
     }
     maxPosibleDivisible--
 }
