@@ -32,9 +32,9 @@ else console.log("No es múltiplo de ninguno de esos 2") // si no cumple ninguno
 excersiseNumber++;
 console.log(`--- Excercise number ${excersiseNumber} ---`)
 
-let valueA =  parseInt(prompt("Ingrese el número de A"))
-let valueB =  parseInt(prompt("Ingrese el número de B"))
-let valueC =  parseInt(prompt("Ingrese el número de C"))
+let valueA = 2 //parseInt(prompt("Ingrese el número de A"))
+let valueB = 2 //parseInt(prompt("Ingrese el número de B"))
+let valueC = 2 //parseInt(prompt("Ingrese el número de C"))
 
 let discriminant = valueB*valueB - 4*valueA*valueC
 
@@ -54,7 +54,7 @@ console.log(`--- Excercise number ${excersiseNumber} ---`)
 
 let isNotOver = true;
 do {
-    let inputOfKey = prompt("Ingrese una opción")
+    let inputOfKey ="d"// prompt("Ingrese una opción")
     switch (inputOfKey){
         case 'a':
             console.log("Tocar opción a")
@@ -73,3 +73,21 @@ do {
             console.log("Cualca")
     }
 }while(isNotOver)
+
+excersiseNumber++;
+console.log("--- Excercise number "+excersiseNumber+ " ---")
+console.log(`--- Excercise number ${excersiseNumber} ---`)
+console.log("--- Excercise number ",excersiseNumber, " ---")
+
+let numberForExcercise4 = 116// parseInt(prompt("Ingrese un número"))
+let maxPosibleDivisible = numberForExcercise4/2
+
+let divisibiles = []
+
+while(maxPosibleDivisible>=0){
+    if(numberForExcercise4%maxPosibleDivisible==0){
+        divisibiles=divisibiles.concat(maxPosibleDivisible)
+    }
+    maxPosibleDivisible--
+}
+console.log(divisibiles)
