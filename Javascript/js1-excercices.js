@@ -40,6 +40,53 @@ else if(x<0 && y>0) console.log("Cuadrante 2")
 else console.log("Cuadrante 3")
 
 
+
+console.log("%cEjercicio 4-2 ----------","color:blue")
+
+const salary_ex5 = getNumberFromPrompt("Ingrese le salarie",500) 
+const antiquety = getNumberFromPrompt("Ingrese la angigueded",10)
+let newSalary = salary_ex5
+
+if(hasEnoughAntiquetityAndIsCurrentlyPoor(salary_ex5,antiquety)){
+    newSalary = salary_ex5*1.2;
+}else if(hasNotEnoughAntiquetyAndIsCurrentlyPoor(salary_ex5,antiquety)){
+    newSalary = salary_ex5*1.05;
+}
+console.log(newSalary)
+
+function hasNotEnoughAntiquetyAndIsCurrentlyPoor(salary,yearsOfWork) {
+    return isCurrentlyPoor(salary) && yearsOfWork < 10
+}
+function hasEnoughAntiquetityAndIsCurrentlyPoor(salary,yearsOfWork) {
+    return isCurrentlyPoor(salary) < 500 && yearsOfWork >= 10
+}
+function isCurrentlyPoor(salary) {
+    return salary < 500
+}
+
+console.log("%cEjercicio 5 ----------","color:blue")
+
+
+let gradeA = getNumberFromPrompt("Nota 1",1)
+let gradeB = getNumberFromPrompt("Nota 2",1)
+let gradeC = getNumberFromPrompt("Nota 3",1)
+
+const thresholdForPromotion = 7
+
+var result = getAverage(gradeA, gradeB, gradeC)
+
+if(result>=thresholdForPromotion) console.log("%cPROMOTED!!","color:yellow")
+
+function getAverage(gradeA, gradeB, gradeC) {
+    return getTotal(gradeA, gradeB, gradeC) / 3
+}
+
+function getTotal(gradeA,gradeB,gradeC){
+    return gradeA+gradeB+gradeC
+}
+
+
+
 function getNumberFromPrompt(text,defaultValue) {
     return parseInt(prompt(text, defaultValue))
 }
