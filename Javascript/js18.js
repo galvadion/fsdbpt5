@@ -28,5 +28,6 @@ console.log(coinsOfFive == expectedCoinsOfFive)
 function calculateCoins(money,value) {
     let difference = money - value
     coinsOfTen = Math.floor(difference / 10)
+    coinsOfFive = (difference%10)/5
 }
 
