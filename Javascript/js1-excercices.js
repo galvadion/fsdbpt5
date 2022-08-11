@@ -66,7 +66,6 @@ function isCurrentlyPoor(salary) {
 
 console.log("%cEjercicio 5 ----------","color:blue")
 
-
 let gradeA = getNumberFromPrompt("Nota 1",1)
 let gradeB = getNumberFromPrompt("Nota 2",1)
 let gradeC = getNumberFromPrompt("Nota 3",1)
@@ -84,7 +83,6 @@ function getAverage(gradeA, gradeB, gradeC) {
 function getTotal(gradeA,gradeB,gradeC){
     return gradeA+gradeB+gradeC
 }
-
 
 
 function getNumberFromPrompt(text,defaultValue) {
