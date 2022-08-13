@@ -57,6 +57,5 @@ function calculateCoins(money,value) {
         coinsOfTen : coinsOfTen,
         coinsOfFive : (change-(coinsOfTen*10))/5
     }
-    
 }
 
