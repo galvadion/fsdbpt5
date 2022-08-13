@@ -87,9 +87,18 @@
         // después por cada elemento (algún problema?, no te peleo porque no puedo hblar) 
         //Lo dibujo nuevamente y lo agrego al Renderer
         taskList.forEach((task)=>{
-          const newElement = `<li class="${task.priority}">${task.text}</li>`
+          const newElement = `<li class="tasks ${task.priority}">${task.text}</li>`
           taskListRenderer.innerHTML += newElement
         })
+        Array.from(document.getElementsByClassName("tasks"))
+        .forEach((task)=>
+          {task.addEventListener('mouseover',function(e){
+            e.target.style="font-size:40px"
+          })
+          task.addEventListener('mouseout',function(e){
+            e.target.style="font-size:16px"
+          })}
+        )
       }
 
       function addListUsingCreate(){
