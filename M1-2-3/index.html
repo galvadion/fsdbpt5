@@ -27,17 +27,20 @@
                 height: 10vh;
                 object-fit: cover;
             }
+            .symptom{
+                color:red;
+            }
         </style>
     </head>
     <body>
         <header>
             <img src="jason.webp"/>
-            <h1>Consejos para prevenir el coronavirus</h1>
+            <h1 id="title">Consejos para prevenir el coronavirus</h1>
         </header>
         <br>
         <main>
             <section>
-                <h2>Lavar bien tus manos</h2>
+                <h2  class="symptom">Lavar bien tus manos</h2>
                 <p>
                     Una de las acciones claves y más efectivas que deben incorporarse a la rutina diaria es lavarse las manos a menudo.
                     <br>
@@ -54,8 +57,8 @@
                     <li>Seca con una toalla limpia o con papel.</li>
                 </ol>
             </section>
-            <section>
-                <h2>Síntomas</h2>
+            <section id="section_for_symptom">
+                <h2 class="symptom" id="symptom">Síntomas</h2>
                 <ul>
                     <li>Secrecciones nasales</li>
                     <li>Dolor de garganta</li>
@@ -64,9 +67,40 @@
                     <li>Falta de aire o dificultad para respirar</li>
                 </ul>
             </section>
-            
+            <div id="div1">HOLIS</div>
+            <input name="name" id="name" value="Pepe">
+            <button id="myBtn" >SOY EL QUE EJECUTA LA MAGIA QUE ESTOY TIRANDO</button>
         </main>
-        <script src="../Javascript/js1-excercices7-up.js"></script>
+       <script>
+            function onClick(){
+                const symptom = document.getElementById("symptom")
+                symptom.classList.remove("symptom")
+                const newDiv = document.createElement("div");
+                const newContent = document.createTextNode("Hola pibeeee")
+                newDiv.appendChild(newContent)
+                const father = document.getElementById("section_for_symptom")
+                father.insertBefore(newDiv,symptom)
+                const title = document.getElementById("title")
+                title.remove();
+                const input = document.getElementById("name")
+                input.value="pisado pelao"
+                console.log(input.value)
+            }
+
+            document.getElementById("myBtn")
+            .addEventListener('click',onClick)
+
+            document.getElementById("section_for_symptom")
+            .addEventListener("mouseover",(event)=>{
+                console.log("On hover")
+                event.target.style = "font-size: 80px;"
+            })
+
+            document.getElementById("section_for_symptom")
+            .addEventListener("mouseout",(event)=>{
+                event.target.style = "font-size: 10px;"
+            })
+       </script>
     </body>
 
 </html>

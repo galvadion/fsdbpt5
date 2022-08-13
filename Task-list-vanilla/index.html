@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onresize="myFunction()">
+    <main>
+      <h1>Lista de tareas!</h1>
+
+      <form action="javascript:void(0);">
+        <input
+          id="text"
+          type="text"
+          name="text"
+          placeholder="Descripción de la tarea"
+        />
+        <select name="priority" id="priority">
+          <option value="" disabled selected>Prioridad</option>
+          <option value="prioridad-baja">baja</option>
+          <option value="prioridad-media">media</option>
+          <option value="prioridad-alta">alta</option>
+        </select>
+        <button id="add">Agregar!</button>
+      </form>
+      <span id="error-message"> </span>
+      <h3>Tareas</h3>
+      <ul id="task-list">
+        <li class="prioridad-baja">
+          Pepe
+        </li>
+      </ul>
+
+      <button id="remove_last" onclick="removeLastTask()">Eliminar ultima!</button>
+
+      <p>
+        Para agregar tareas vamos a tener que hablar de eventos, el DOM y cómo
+        interactuar con él
+      </p>
+    </main>
+    <script>
+      function myFunction() {
+          console.log('func')
+      }
+    </script>
+    <script>
+      // Reconozco el campo del texto de la tarea y lo asigno a una const para utilizarlo
+      const text = document.getElementById("text")
+      // Reconozco el campo de la prioridad de la tarea y lo asigno a una const para utilizarlo
+      const priority = document.getElementById("priority") 
+      // Reconozco el botón a utilizar, el que va a escuchar el click y lo asigno
+      const button = document.getElementById("add")
+      // Reconozco el lugar que va a almacenar mi lista de tareas y lo asigno
+      const taskListRenderer = document.getElementById("task-list")
+
+      const taskList = []
+
+      button.addEventListener("click",function (){
+        //addListUsingCreate()
+        // adds element to array
+        taskList.push({
+          text: text.value,
+          priority:priority.value,
+          priorityOrder: getPriorityOrder(priority.value) })
+          //orders task list
+        taskList.sort((a,b)=> b.priorityOrder-a.priorityOrder)
+        renderTaskList();
+        // limpiamos los campos de texto y el option lo volvemos a default
+        text.value= ""
+        priority.value = ""
+      })
+
+      function removeLastTask() {
+        taskList.pop()
+        renderTaskList();
+      }
+
+      function renderTaskList(){
+        //limpio el holder actual
+        taskListRenderer.innerHTML = ""
+        // después por cada elemento (algún problema?, no te peleo porque no puedo hblar) 
+        //Lo dibujo nuevamente y lo agrego al Renderer
+        taskList.forEach((task)=>{
+          const newElement = `<li class="${task.priority}">${task.text}</li>`
+          taskListRenderer.innerHTML += newElement
+        })
+      }
+
+      function addListUsingCreate(){
+        const li = document.createElement("li")
+        li.classList.add(priority.value)
+        const liChild = document.createTextNode(text.value)
+        li.appendChild(liChild)
+        taskListRenderer.appendChild(li)
+      }
+
+      function getPriorityOrder(value){
+        if(value == 'prioridad-baja')
+          return 1
+        else if (value == 'prioridad-media')
+          return 2
+        else return 3
+      }
+    </script>
+  </body>
+</html>
