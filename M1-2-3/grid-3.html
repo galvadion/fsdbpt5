@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grid css 3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            * {
+                margin: 0;
+            }
+            html, body{
+                height: 100%;
+            }
+            body{
+                grid-template-areas: "header header header"
+                                    "nav article ads"
+                                    "nav footer footer";
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 3fr 1fr;
+                gap: 5px;
+                max-height: 100vh;
+                max-width: 100vw;
+                display: grid;
+            }
+            header{
+                grid-area: header;
+                background-color: aquamarine;
+            }
+            nav{
+                grid-area: nav;
+                background-color: greenyellow;
+            }
+            #ads{
+                grid-area: ads;
+                background-color: blue;
+            }
+
+            article{
+                grid-area: article;
+                background-color: yellow;
+            }
+            footer{
+                grid-area: footer;
+                background-color: orange;
+            }
+            #ads-bottom{
+                display: none;
+            }
+            @media (max-width:450px) {
+                *{
+                    font-size: 1.2rem;
+                }
+                body{
+                    grid-template-areas: "header"
+                                        "ads-top"
+                                        "article"
+                                        "ads-bottom"
+                                        "footer";
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+                    gap: 5px;
+                    max-height: 100vh;
+                    max-width: 100vw;
+                    display: grid;
+                }
+                nav{
+                    display: none;
+                }
+                #ads {
+                    grid-area: ads-top;
+                }
+                #ads-bottom {
+                    display: block;
+                    grid-area: ads-bottom;
+                    background-color: blueviolet;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            Header
+        </header>
+        <nav>
+            Nav
+        </nav>
+        <article>
+            Article
+        </article>
+        <aside id="ads">
+            Ads
+        </aside>
+        <aside id="ads-bottom">
+            Ads
+        </aside>
+        <footer>
+            Footer
+        </footer>
+    </body>
+</html>
