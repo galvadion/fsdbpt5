@@ -1,15 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Server express para probar cosas",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server -p 4000 -d 2000 --watch ./db.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "diego",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "express": "^4.18.2"
   }
 }

@@ -1,2 +1,3 @@
 server-task-list/node_modules/*
 server/node_modules/*
+json-server/node_modules/*
