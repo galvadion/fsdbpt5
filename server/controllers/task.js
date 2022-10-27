@@ -1,28 +1,27 @@
 const express = require('express')
 const router = express.Router();
 
+//Definimos la ruta get que devuelve las tareas
 router.get('/',(req,res)=>{
     res.send(tasks)
 })
-
+//Definimos la ruta delete que elimina una tarea
 router.delete('/:id',(req,res)=>{
-    let id = req.params.id;
-    console.log(id)
-    tasks = tasks.filter((task) => task.id != id)
-    console.log(tasks)
+    tasks = tasks.filter((task) => task.id != req.params.id)
     res.send({message: 'deleted'})
 })
 
+//Definimos la ruta put que actualiza una tarea
 router.put('/:id',(req,res)=>{
-    let id = req.params.id;
     let body = req.body;
     console.log(body)
-    let task = tasks.find((task)=>task.id==id)
+    let task = tasks.find((task)=>task.id==req.params.id)
     task.task = body.task
     task.priority = body.priority
     res.send(task)
 })
 
+//Definimos la ruta post que registra una tarea
 router.post('/',(req,res)=>{
     let task = req.body;
     task.id = tasks.sort((a,b)=> b.id - a.id)[0].id+1

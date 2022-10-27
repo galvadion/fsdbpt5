@@ -1,9 +1,11 @@
 const express = require('express');
+// importamos las rutas definidas en el archivo task de controllers
 const taskRoutes = require('./controllers/task')
 
-
+// inicializamos nuestro app con express
 const app = express();
 
+// Indicador de que queremos que reconozca las requests como si fuesen json
 app.use(express.json())
 
 //Lo que este con :{name} es path params
@@ -16,6 +18,7 @@ app.get('/',(req,res) => {
     res.send('Hola '+ req.params.name)
 })
 
+// Agregamos las rutas de taskRoutes dentro de la ruta base /tasks
 app.use('/tasks',taskRoutes)
 
 app.listen(8080,()=>{
