@@ -1,0 +1,16 @@
+<div id="pokemon" [ngClass]="pokemon.type[0].toLowerCase()">
+    <div>
+        <header>
+            <a routerLink="/">
+                <img src="../../assets/icons/arrow-left.svg">
+            </a>
+            <h1>
+                {{auxService.capitalizeFirstLetter(pokemon.name)}}
+            </h1>
+            <span>
+                #{{auxService.getNumber(pokemon.number)}}
+            </span>
+        </header>
+        
+    </div>
+</div>

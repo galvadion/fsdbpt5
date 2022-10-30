@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 
 const httpOptions = {
@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class ApiService {
   
-  list: Subject<any> = new Subject<any>()
+  list: BehaviorSubject<any> = new BehaviorSubject<any>([])
   
   public url: string;
 

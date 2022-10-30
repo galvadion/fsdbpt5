@@ -3,7 +3,9 @@
     <input type="text" [(ngModel)]="search" (keyup)="filter()"
     placeholder="Buscar" />
     <div id="list">
-        <div *ngFor="let pokemon of result" [ngClass]="'pokemon ' + pokemon.type[0].toLowerCase()">
+        <a *ngFor="let pokemon of result"
+            [routerLink]="pokemon.number" 
+            [ngClass]="'pokemon ' + pokemon.type[0].toLowerCase()" >
             <span>
                 #{{auxService.getNumber(pokemon.number)}}
             </span>
@@ -11,6 +13,6 @@
             <div>
                 {{auxService.capitalizeFirstLetter(pokemon.name)}}
             </div>
-        </div>
+        </a>
     </div>
 </div>
