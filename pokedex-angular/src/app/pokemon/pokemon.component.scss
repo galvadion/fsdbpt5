@@ -3,30 +3,41 @@ header{
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        width: 90vw;
-        height: 8vh;
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
+        width: 85vw;
+        height: 10vh;
         justify-content: center;
         color: white;
         img{
             filter: brightness(0) invert(1);
+            ;
+        }
+        a{
+            height: 100%;
+            display: flex;
+            img {
+                align-self: center;
+                height: 3vh;
+            }
         }
         h1 {
             margin-left: 4vw;
+            font-size: 3vh;
         }
         span {
             margin-left: auto;
             color: white;
             align-self: center;
+            font-size: 1.5vh;
         }
     > img {
         position: absolute;
         z-index:1;
-        opacity:0.2;
-        right: 9.5vw;
-        top: 4.5vh;
-        transform: scale(1.2);
+        opacity:0.1;
+        right: 4.5rem;
+        top: 4.5rem;
+        transform: scale(1.4);
     }
     
 }
@@ -41,9 +52,16 @@ header{
 
 #body {
     background-color: white;
-    height: 65vh;
+    height: 60vh;
     width: 96vw;
     margin-left: 2vw;
     margin-top: 26vh;
-    border-radius: 2%;
+    border-radius: 1rem;
+}
+
+#center{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+
 }

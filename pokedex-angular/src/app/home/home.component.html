@@ -7,9 +7,12 @@
             [routerLink]="pokemon.number" 
             [ngClass]="'pokemon ' + pokemon.type[0].toLowerCase()" >
             <span>
-                #{{auxService.getNumber(pokemon.number)}}
+                <span>
+                    #{{auxService.getNumber(pokemon.number)}}
+                </span>
+                <img src="{{pokemon.img}}" />
             </span>
-            <img src="{{pokemon.img}}" />
+            
             <div>
                 {{auxService.capitalizeFirstLetter(pokemon.name)}}
             </div>
