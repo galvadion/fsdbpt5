@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: poppins;
+    src: url("./assets/font/Poppins-Medium.ttf");
+    src: url("./assets/font/Poppins-Bold.ttf");
+}
+
+body {
+    margin:0;
+    font-family: poppins;
+    background-color: #F7F7F7;
+}
+
