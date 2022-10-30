@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { AuxServiceService } from 'src/app/aux-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  sortedById: boolean = false
+  
+  constructor(private aux: AuxServiceService) {
+    aux.sortedById.subscribe(sortedById=>{
+      this.sortedById = sortedById
+    })
+   }
 
   ngOnInit(): void {
+
+  }
+
+  getSort(): String {
+    return this.sortedById ? "#" : "AZ"
+  }
+
+  changeSort(){
+    this.aux.sortedById.next(!this.sortedById)
   }
 
 }

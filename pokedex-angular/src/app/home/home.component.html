@@ -1,6 +1,6 @@
 <div id="wrapper">
-    <app-header></app-header>
-    <input type="text" [(ngModel)]="search" 
+    <app-header ></app-header>
+    <input type="text" [(ngModel)]="search" (keyup)="filter()"
     placeholder="Buscar" />
     <div id="list">
         <div *ngFor="let pokemon of list" [ngClass]="'pokemon ' + pokemon.type[0].toLowerCase()">
@@ -9,7 +9,7 @@
             </span>
             <img src="{{pokemon.img}}" />
             <div>
-                {{pokemon.name}}
+                {{auxService.capitalizeFirstLetter(pokemon.name)}}
             </div>
         </div>
     </div>

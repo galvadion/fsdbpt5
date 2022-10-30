@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 const httpOptions = {
@@ -11,7 +11,13 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
+  
+  list: Subject<any> = new Subject<any>()
+  
   public url: string;
+
+
+
   constructor( public _http: HttpClient) { 
     this.url = "https://pokeapi.co/api/v2/pokemon";
   }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { ApiService } from '../api.service';
 import { AuxServiceService } from '../aux-service.service';
 
@@ -11,11 +12,18 @@ export class HomeComponent implements OnInit {
   search: String = ""
 
   list: any[] = [ ]
+  result: any[] =[]
 
-  constructor(private api: ApiService, public auxService: AuxServiceService) { }
+  constructor(private api: ApiService, 
+    public auxService: AuxServiceService) { }
+
+
+  filter(){
+    this.result = this.list.filter((pokemon)=> pokemon.name.toLowerCase().includes(this.search.toLowerCase()))
+  }
 
   ngOnInit(): void {
-    for (let number = 1; number < 21; number++){
+    for (let number = 1; number < 151; number++){
     this.api.getPokemon(number).subscribe( (pokemon:any) =>{
       this.list.push({
             "number": pokemon.id,
@@ -35,8 +43,19 @@ export class HomeComponent implements OnInit {
             }
           }
       )
+      this.api.list.next(this.list)
+      this.auxService.sortedById.next(true)
     })
+    
   }
+  this.auxService.sortedById.subscribe(orderById =>{
+    if(orderById){
+      this.result = this.list.sort((a:any,b:any) => a.number - b.number)
+    }else{
+      this.result = this.list.sort((a:any,b:any) => a.name.localeCompare(b.name))
+    }
+  })
+  
   }
 
 }
