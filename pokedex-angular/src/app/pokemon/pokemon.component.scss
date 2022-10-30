@@ -1,29 +1,49 @@
 header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    width: 90vw;
-    justify-content: center;
-    color: white;
-    img{
-        filter: brightness(0) invert(1);
-    }
-    h1 {
-        margin-left: 4vw;
-    }
-    span {
-        margin-left: auto;
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: 90vw;
+        height: 8vh;
+        justify-content: center;
         color: white;
-        align-self: center;
+        img{
+            filter: brightness(0) invert(1);
+        }
+        h1 {
+            margin-left: 4vw;
+        }
+        span {
+            margin-left: auto;
+            color: white;
+            align-self: center;
+        }
+    > img {
+        position: absolute;
+        z-index:1;
+        opacity:0.2;
+        right: 9.5vw;
+        top: 4.5vh;
+        transform: scale(1.2);
     }
+    
 }
 
 #pokemon{
     width: 100vw;
     height: 100vh;
-    div{
+    > div{
         height: 100%;
     }
+}
+
+#body {
+    background-color: white;
+    height: 65vh;
+    width: 96vw;
+    margin-left: 2vw;
+    margin-top: 26vh;
+    border-radius: 2%;
 }
