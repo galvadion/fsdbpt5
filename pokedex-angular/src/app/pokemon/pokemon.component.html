@@ -1,27 +1,17 @@
 <div id="pokemon" *ngIf="pokemon!= null" [ngClass]="pokemon.types[0].toLowerCase()">
     <div>
-        <header>
-            <a routerLink="/">
-                <img src="../../assets/icons/arrow-left.svg">
-            </a>
-            <h1>
-                {{auxService.capitalizeFirstLetter(pokemon.name)}}
-            </h1>
-            <span>
-                #{{auxService.getNumber(pokemon.number)}}
-            </span>
-        </header>
+      <app-title [pokemon]="pokemon"></app-title>
         <div id="center">
             <img [routerLink]="'/'+previousPokemonNumber"
                 *ngIf="previousPokemonNumber"
-                id="left-arrow" 
-                class="arrow" 
+                id="left-arrow"
+                class="arrow"
                 src="../../assets/icons/Frame.svg"/>
             <img id="pokemon-img" src="{{pokemon.img}}" />
-            <img [routerLink]="'/'+nextPokemonNumber" 
+            <img [routerLink]="'/'+nextPokemonNumber"
                 *ngIf="nextPokemonNumber"
                 class="arrow"
-                id="right-arrow"  
+                id="right-arrow"
                 src="../../assets/icons/Frame.svg"/>
         </div>
     </div>
@@ -55,7 +45,7 @@
                             {{auxService.capitalizeFirstLetter(move)}}<br/>
                         </ng-container>
                     </div>
-                    
+
                     <h6>Moves</h6>
                 </div>
             </div>

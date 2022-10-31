@@ -11,18 +11,22 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-  
+
   list: BehaviorSubject<any> = new BehaviorSubject<any>([])
-  
+
   public url: string;
 
 
 
-  constructor( public _http: HttpClient) { 
-    this.url = "https://pokeapi.co/api/v2/pokemon";
+  constructor( public _http: HttpClient) {
+    this.url = "https://pokeapi.co/api/v2/";
   }
 
   getPokemon(number: number): Observable<any[]> {
-    return this._http.get<any[]>(this.url + '/' + number, httpOptions);
+    return this._http.get<any[]>(this.url + 'pokemon/' + number, httpOptions);
+  }
+
+  getDescription(number: number): Observable<any[]> {
+    return this._http.get<any[]>(this.url + 'pokemon-species/' + number, httpOptions);
   }
 }

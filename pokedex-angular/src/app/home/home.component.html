@@ -1,21 +1,21 @@
 <div id="wrapper">
-    <app-header ></app-header>
-    <input type="text" [(ngModel)]="search" (keyup)="filter()"
-    placeholder="Buscar" />
-    <div id="list">
-        <a *ngFor="let pokemon of result"
-            [routerLink]="pokemon.number" 
-            [ngClass]="'pokemon ' + pokemon.types[0].toLowerCase()" >
+  <app-header></app-header>
+  <input type="text" [(ngModel)]="search" (keyup)="filter()"
+         placeholder="Buscar"/>
+  <div id="list">
+    <a *ngFor="let pokemon of result"
+       [routerLink]="pokemon.number"
+       [ngClass]="'pokemon ' + pokemon.types[0].toLowerCase()">
             <span>
                 <span>
                     #{{auxService.getNumber(pokemon.number)}}
                 </span>
-                <img src="{{pokemon.img}}" />
+                <img src="{{pokemon.img}}"/>
             </span>
-            
-            <div>
-                {{auxService.capitalizeFirstLetter(pokemon.name)}}
-            </div>
-        </a>
-    </div>
+
+      <div>
+        {{auxService.capitalizeFirstLetter(pokemon.name)}}
+      </div>
+    </a>
+  </div>
 </div>

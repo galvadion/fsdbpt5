@@ -2,7 +2,11 @@
 @font-face {
     font-family: poppins;
     src: url("./assets/font/Poppins-Medium.ttf");
-    src: url("./assets/font/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: poppinsbold;
+  src: url("./assets/font/Poppins-Bold.ttf");
 }
 
 body {

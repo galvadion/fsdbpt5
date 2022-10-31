@@ -8,13 +8,17 @@ import { HeaderComponent } from './home/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { TitleComponent } from './pokemon/title/title.component';
+import { CardComponent } from './home/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    PokemonComponent
+    PokemonComponent,
+    TitleComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
