@@ -3,7 +3,7 @@
     height: calc(100vh - 2*2vw);
     padding: 2vw;
     > div:first-child{
-        height: calc(30vh - 2vw);
+        height: calc(33.5vh - 2vw);
         background-image: url("../../assets/Iconos e imagenes/Pokeball.png");
         background-repeat: no-repeat;
         background-blend-mode: screen;
@@ -63,24 +63,88 @@ header{
     transform: rotate(180deg);
 }
 
+#right-arrow {
+    right: 0;
+}
+
 .arrow{
     filter: brightness(0.0) invert(1);
     color: white;
     height: 3vh;
+    cursor: pointer;
+    position: absolute;
 }
 
 
 
 #pokemon-img{
-    height: 30vh;
+    height: 33.5vh;
     position: relative;
     bottom: 3vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 #body {
     background-color: white;
-    height: calc(70vh - 2*2vw);
+    height: calc(66.5vh - 2*2vw);
     width: 96vw;
     border-radius: 1rem;
+}
+
+#types{
+    padding-top: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+    span{
+        color:white !important;
+        border-radius: 0.8em;
+        padding: 0.3em 0.6em;
+    }
+}
+
+#about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+    > span {
+        font-size: 2vh;
+    }
+}
+#characteristics{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2vh;
+    color: #666666;
+    width: 80vw;
+    div{
+        align-items: center;
+        text-align: center;
+        width: 20vw;
+        justify-content: center;
+        height: 7vh;
+        >div{
+            height: 4vh;
+            display: flex;
+            gap: 1vw;
+            margin-bottom: 1vh;
+        }
+        h6{
+            margin-block-start: auto;
+        }
+    }
+}
+#height{
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+}
+#moves{
+    display: flex;
+    flex-direction: column;
+    
 }

@@ -5,7 +5,7 @@
     <div id="list">
         <a *ngFor="let pokemon of result"
             [routerLink]="pokemon.number" 
-            [ngClass]="'pokemon ' + pokemon.type[0].toLowerCase()" >
+            [ngClass]="'pokemon ' + pokemon.types[0].toLowerCase()" >
             <span>
                 <span>
                     #{{auxService.getNumber(pokemon.number)}}

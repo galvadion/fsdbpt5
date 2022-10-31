@@ -1,4 +1,4 @@
-<div id="pokemon" [ngClass]="pokemon.type[0].toLowerCase()">
+<div id="pokemon" *ngIf="pokemon!= null" [ngClass]="pokemon.types[0].toLowerCase()">
     <div>
         <header>
             <a routerLink="/">
@@ -12,12 +12,54 @@
             </span>
         </header>
         <div id="center">
-            <img id="left-arrow" class="arrow" src="../../assets/icons/Frame.svg"/>
+            <img [routerLink]="'/'+previousPokemonNumber"
+                *ngIf="previousPokemonNumber"
+                id="left-arrow" 
+                class="arrow" 
+                src="../../assets/icons/Frame.svg"/>
             <img id="pokemon-img" src="{{pokemon.img}}" />
-            <img class="arrow" src="../../assets/icons/Frame.svg"/>
+            <img [routerLink]="'/'+nextPokemonNumber" 
+                *ngIf="nextPokemonNumber"
+                class="arrow"
+                id="right-arrow"  
+                src="../../assets/icons/Frame.svg"/>
         </div>
     </div>
     <div id="body">
-       
+       <div id="types">
+            <span *ngFor="let type of pokemon.types" [ngClass]="type">
+                {{auxService.capitalizeFirstLetter(type)}}
+            </span>
+       </div>
+       <div id="about">
+            <span>About</span>
+            <div id="characteristics">
+                <div>
+                    <div>
+                        <img src="../../assets/icons/Weight.svg" />
+                        {{pokemon.weight/10}} Kg
+                    </div>
+                    <h6>Weight</h6>
+                </div>
+                <div id="height">
+                    <div>
+                        <img src="../../assets/icons/Height.svg" />
+                        {{pokemon.height/10}} m
+                    </div>
+                    <h6>Height</h6>
+                </div>
+                <div >
+                    <div id="moves">
+                        <ng-container
+                         *ngFor="let move of pokemon.moves">
+                            {{auxService.capitalizeFirstLetter(move)}}<br/>
+                        </ng-container>
+                    </div>
+                    
+                    <h6>Moves</h6>
+                </div>
+            </div>
+            <p>{{pokemon.description}}</p>
+       </div>
     </div>
 </div>

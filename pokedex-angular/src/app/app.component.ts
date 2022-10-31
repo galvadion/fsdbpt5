@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
               "height": pokemon.height,
               "weight":pokemon.weight,
               "moves": pokemon.moves.slice(0,2).map((move: any)=>move.move.name),
-              "type": pokemon.types.map((type: any)=>type.type.name),
+              "types": pokemon.types.map((type: any)=>type.type.name),
               "base": {
                   "HP": pokemon.stats[0]["base_stat"],
                   "Attack": pokemon.stats[1]["base_stat"],
