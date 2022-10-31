@@ -74,7 +74,8 @@
   }
 }
 
-#about {
+.section {
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +83,20 @@
 
   > span {
     font-size: 1.5vh;
+    font-family: poppinsbold;
   }
+}
+
+#about {
+  p{
+    padding-left: 5.5vw;
+    padding-right: 5.5vw;
+    font-size: 1.5vh;
+    color: #666666;
+  }
+}
+
+#stats {
   p{
     padding-left: 5.5vw;
     padding-right: 5.5vw;
