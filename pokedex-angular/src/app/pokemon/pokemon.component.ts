@@ -23,6 +23,7 @@ export class PokemonComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log("fafa")
     this.route.params.subscribe(_ => {
       this.selectedPokemon.next(this.api.list.getValue().find((pokemon: any) => pokemon.number == this.route.snapshot.paramMap.get('id')))
     })
@@ -32,12 +33,12 @@ export class PokemonComponent implements OnInit {
     this.selectedPokemon.subscribe(pokemon => {
       this.pokemon = pokemon;
       this.getSurroundingPokemon();
+      console.log(this.stats())
       this.api.getDescription(this.pokemon.number).subscribe((data: any) => {
         this.pokemon.description = data.flavor_text_entries.filter((text: any) => text.language.name == "en")[0].flavor_text
       })
     })
   }
-
 
   private getSurroundingPokemon() {
     if (this.pokemon.number !== 1) {
@@ -48,4 +49,11 @@ export class PokemonComponent implements OnInit {
     }
   }
 
+  stats() : number[] {
+    return Object.values(this.pokemon.stats)
+  }
+
+  keys() : string[] {
+    return Object.keys(this.pokemon.stats).map((key:string)=> key.toUpperCase())
+  }
 }

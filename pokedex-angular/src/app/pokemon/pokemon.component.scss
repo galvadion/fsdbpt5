@@ -103,6 +103,13 @@
     font-size: 1.5vh;
     color: #666666;
   }
+  > div {
+    display: flex;
+    width: 89vw;
+    flex-direction: row;
+    padding-left: 5.5vw;
+    padding-right: 5.5vw;
+  }
 }
 
 #characteristics {
@@ -119,13 +126,14 @@
     width: 30vw;
     justify-content: center;
     height: 7vh;
-    font-size: 2.5vw;
-
+    font-size: 3vw;
+    >span{
+      font-size: 2.5vw;
+    }
     > div {
       height: 4vh;
       display: flex;
-      gap: 1vw;
-      margin-bottom: 1vh;
+      gap: 3vw;
     }
 
     h6 {
@@ -149,6 +157,26 @@
   display: flex;
   flex-direction: column;
   text-align: end;
+  font-size: 1.5vh;
+  border-right: 1px solid #E0E0E0;
+  padding-right: 3vw;
+}
+
+#stats-values{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  >app-stat-value {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    >progress{
+      height: 2vh;
+      width: 100%;
+    }
+  }
 }
 
 @media (orientation: landscape) {

@@ -22,21 +22,21 @@
             </span>
        </div>
        <div class="section" id="about">
-            <span>About</span>
+            <span class="color">About</span>
             <div id="characteristics">
                 <div>
                     <div>
                         <img src="../../assets/icons/Weight.svg" />
                         {{pokemon.weight/10}} Kg
                     </div>
-                    <h6>Weight</h6>
+                    <span>Weight</span>
                 </div>
                 <div id="height">
                     <div>
                         <img src="../../assets/icons/Height.svg" />
                         {{pokemon.height/10}} m
                     </div>
-                    <h6>Height</h6>
+                    <span>Height</span>
                 </div>
                 <div >
                     <div id="moves">
@@ -46,20 +46,22 @@
                         </ng-container>
                     </div>
 
-                    <h6>Moves</h6>
+                    <span>Moves</span>
                 </div>
             </div>
             <p>{{pokemon.description}}</p>
        </div>
-      <div class="section" id="stats">
-        <span>Stats</span>
+      <div class="section color" id="stats">
+        <span >Stats</span>
         <div>
           <div id="attributes">
-            <span>HP</span>
-            <span>ATK</span>
+            <span *ngFor="let key of keys()">{{key}}</span>
           </div>
-          <div>
-
+          <div id="stats-values">
+            <app-stat-value *ngFor="let stat of stats()"
+                            [pokemonType]="pokemon.types[0].toLowerCase()"
+                            [stat]="stat"
+                           ></app-stat-value>
           </div>
         </div>
       </div>

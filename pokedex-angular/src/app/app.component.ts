@@ -24,13 +24,13 @@ export class AppComponent implements OnInit {
           "weight": pokemon.weight,
           "moves": pokemon.moves.slice(0, 2).map((move: any) => move.move.name),
           "types": pokemon.types.map((type: any) => type.type.name),
-          "base": {
-            "HP": pokemon.stats[0]["base_stat"],
-            "Attack": pokemon.stats[1]["base_stat"],
-            "Defense": pokemon.stats[2]["base_stat"],
-            "Spa": pokemon.stats[3]["base_stat"],
-            "Spd": pokemon.stats[4]["base_stat"],
-            "Speed": pokemon.stats[5]["base_stat"]
+          "stats": {
+            "hp": pokemon.stats[0]["base_stat"],
+            "atk": pokemon.stats[1]["base_stat"],
+            "def": pokemon.stats[2]["base_stat"],
+            "satk": pokemon.stats[3]["base_stat"],
+            "sdef": pokemon.stats[4]["base_stat"],
+            "spd": pokemon.stats[5]["base_stat"]
           }
         })
         this.api.list.next(this.list)

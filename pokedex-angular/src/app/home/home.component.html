@@ -6,8 +6,8 @@
     <a *ngFor="let pokemon of result"
        [routerLink]="pokemon.number"
        [ngClass]="'pokemon ' + pokemon.types[0].toLowerCase()">
-            <span>
-                <span>
+            <span class="color">
+                <span >
                     #{{auxService.getNumber(pokemon.number)}}
                 </span>
                 <img src="{{pokemon.img}}"/>

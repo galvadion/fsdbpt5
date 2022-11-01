@@ -1,0 +1,6 @@
+<span>
+  {{auxService.getNumber(stat)}}
+</span>
+<div [ngClass]="'progress-bar ' + pokemonType">
+  <span class="color" [style]="{'width':getPercentage(stat) }"></span>
+</div>
