@@ -1,9 +1,11 @@
 const express = require('express')
 const router = express.Router();
+const db = require('../infrastructure/db')
 
 //Definimos la ruta get que devuelve las tareas
-router.get('/',(req,res)=>{
-    res.send(tasks)
+router.get('/',async (req,res)=>{
+    const results = await db.query('SELECT * FROM tasks')
+    res.send(results.rows)
 })
 //Definimos la ruta delete que elimina una tarea
 router.delete('/:id',(req,res)=>{

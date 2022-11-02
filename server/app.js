@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 // importamos las rutas definidas en el archivo task de controllers
 const taskRoutes = require('./controllers/task')
 
