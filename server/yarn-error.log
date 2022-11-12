@@ -1,0 +1,44 @@
+Arguments: 
+  /Users/diego.becco/.nvm/versions/node/v16.17.1/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/diego.becco/.nvm/versions/node/v16.17.1/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/diego.becco/Downloads/flutter/bin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/diego.becco/.nvm/versions/node/v16.17.1/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.17.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://verdaccio.etermax.net/dotenv: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:141543:19)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Server express para probar cosas",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "diego",
+    "license": "ISC",
+    "dependencies": {
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "pg": "^8.8.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
