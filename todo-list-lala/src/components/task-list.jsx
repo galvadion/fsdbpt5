@@ -6,12 +6,13 @@ import {Task as TaskModel} from '../model/task'
 import PacmanLoader from "react-spinners/PacmanLoader"
 import { addTask, getTasks, httpDeleteTask, httpEditTask } from "../services/httpConsumer";
 
-const TaskList = ()=>{
+const  TaskList = ()=>{
     
   const [taskList,setTaskList] = useState([])
   const [idOfRepeatedElement, setIdOfRepeatedElement] = useState("")
   const [isLoading,setIsLoading]= useState(true)
   const [selectedTask,setSelectedTask] = useState(null)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const addTaskToList = (task) => {
     if(taskDoesNotExists(task.description)){
@@ -72,7 +73,9 @@ const TaskList = ()=>{
         }else{
           addTask(task,data =>{
             setTaskList(taskList.concat(new TaskModel(data.description,data.priority,data.id)))
-        },()=>setIsLoading(false))
+        },()=>setIsLoading(false),(err)=>{
+          console.log(err)
+          setErrorMessage(err)})
         }
   }
 
@@ -84,7 +87,7 @@ const TaskList = ()=>{
               addTaskToList={addTaskToList} 
               inputHasChanged={inputHasChanged}
               selectedTask={selectedTask} />
-            <span id="error-message"> </span>
+            <span id="error-message">{errorMessage.error} </span>
             <h3>Tareas</h3>
             {
             isLoading ?

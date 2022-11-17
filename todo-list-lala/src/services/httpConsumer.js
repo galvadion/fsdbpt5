@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/tasks";
+const url = "http://localhost:8080/tasks";
 
 export const getTasks = (onSuccess,onFinish) =>
     fetch(url)
@@ -13,7 +13,7 @@ export const getTask = (id,onSuccess,onFinish) =>{
     .finally(onFinish);
 }
 
-export const addTask = (task,onSuccess,onFinish) => 
+export const addTask = (task,onSuccess,onFinish,onError) => 
 fetch(url,{
     method: 'POST',
     headers:{ 
@@ -21,8 +21,15 @@ fetch(url,{
         'Content-Type':'application/json'
       },
     body: JSON.stringify(task),
-  }).then((data) => data.json())
-  .then(onSuccess)
+  }).then((data) => {
+    if(data.status.toString().startsWith('2')){
+      return data.json().then(onSuccess)
+    }else{
+      console.log(data)
+      return data.json().then(onError)
+    }
+  })
+  .catch(onError)
   .finally(onFinish)
 
 export const httpEditTask = (id,task,onSuccess,onFinish) => 

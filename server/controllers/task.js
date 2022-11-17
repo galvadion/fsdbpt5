@@ -1,34 +1,47 @@
 const express = require('express')
 const router = express.Router();
-const db = require('../infrastructure/db')
+const {add,edit} = require('../services/tasks')
+// const service = require('../services/tasks')
+// service.add()
+
+const db = require('../models/index')
 
 //Definimos la ruta get que devuelve las tareas
-router.get('/',async (req,res)=>{
-    const results = await db.query('SELECT * FROM tasks')
-    res.send(results.rows)
+router.get('/',async (req,res,next)=>{
+  
+    res.send(await db.task.findAll())
+  
 })
 //Definimos la ruta delete que elimina una tarea
-router.delete('/:id',(req,res)=>{
-    tasks = tasks.filter((task) => task.id != req.params.id)
+router.delete('/:id',async (req,res)=>{
+    await db.task.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
     res.send({message: 'deleted'})
 })
 
 //Definimos la ruta put que actualiza una tarea
-router.put('/:id',(req,res)=>{
+router.put('/:id',async (req,res)=>{
     let body = req.body;
-    console.log(body)
-    let task = tasks.find((task)=>task.id==req.params.id)
-    task.task = body.task
-    task.priority = body.priority
-    res.send(task)
+    res.send(await db.task.update({description: body.description, priority: body.priority},
+      {
+        where: {
+          id: req.params.id
+        }
+      }))
 })
 
 //Definimos la ruta post que registra una tarea
-router.post('/',(req,res)=>{
+router.post('/',async (req,res,next)=>{
     let task = req.body;
-    task.id = tasks.sort((a,b)=> b.id - a.id)[0].id+1
-    tasks.push(task)
-    res.send(tasks)
+    try{
+      res.send(await db.task.create(add(task)))
+    }catch(err){
+      if(err.status == undefined) next(err)
+      res.status(err.status).send(err.error)
+    }
 })
 
 module.exports = router
