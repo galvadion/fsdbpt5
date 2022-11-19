@@ -41,6 +41,18 @@ class Tier{
         this.xsFee = xsFee;
         this.highRange = highRange;
     }
+
+    getXS(revenue){
+        return revenue - this.highRange
+    }
+
+    getComissionFromXS(revenue){
+        return this.xsFee * this.getXS(revenue)
+    }
+
+    getMoneyToPay(revenue){
+        return this.getComissionFromXS(revenue) + this.baseFee
+    }
 }
 
 const tiers = [
@@ -61,16 +73,14 @@ const calculatedComission = (revenue) =>{
     if(tier == null){
         tier = tiers[tiers.length-1]
     }
-    return getCommision(getMoneyToPay(tier, revenue),revenue)
+    return getCommision(tier.getMoneyToPay(revenue),revenue)
 }
 
 const withinRange = (revenue) => (tier) => revenue <= tier.topRange
 
-const getMoneyToPay = (tier, revenue)=> getComissionFromXS(tier, revenue) + tier.baseFee
+//const getMoneyToPay = (tier, revenue)=> tier.getComissionFromXS(revenue) + tier.baseFee
 
-const getComissionFromXS = (tier, revenue) => tier.xsFee * getXS(revenue, tier)
-
-const getXS = (revenue, tier) => revenue - tier.highRange
+//const getComissionFromXS = (tier, revenue) => tier.xsFee * tier.getXS(revenue)
 
 const getCommision = (howMuchToPay, revenue) => Math.round(((howMuchToPay/revenue)*100)*100)/100
 
