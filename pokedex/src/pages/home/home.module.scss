@@ -8,11 +8,14 @@
         border-style: solid;
         border-color: #E0E0E0;
         border-radius: 1em;
-        text-align-last: center;
-        color: #E0E0E0;
+        text-align-last: left;
+        color: #666666;
         padding-top: .5em;
         padding-bottom: .5em;
         font-weight: bold;
+    }
+    input::placeholder{
+        text-align: center;
     }
 }
 

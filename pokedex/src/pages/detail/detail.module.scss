@@ -1,7 +1,7 @@
 #pokemon {
-  width: 98vw;
-  height: calc(100vh - 2vw);
-  padding: 1vw;
+  width: 97.8%;
+  height: calc(100% - 7.767%);
+  padding: 2% 1.1% 1%;
 
   > div:first-child {
     height: calc(33.5vh - 2vw);
@@ -13,8 +13,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 5.5vw;
-    padding-right: 5.5vw;
+    padding-left: 5.682%;
+    padding-right: 5.682%;
+    padding-top:4.667%;
     margin-bottom: 2vw;
   }
 }
@@ -24,7 +25,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  bottom: -6vh;
+  bottom: -15%;
   position: relative;
 }
 
@@ -45,9 +46,9 @@
 }
 
 #pokemonImg {
-  max-height: 33.5vh;
+  max-height: 31.25vh;
   position: relative;
-  bottom: 3vh;
+  bottom: 3%;
   max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
@@ -55,13 +56,13 @@
 
 #body {
   background-color: white;
-  height: calc(66.5vh - 2vw);
+  //height: calc(66.5vh - 2vw);
   width: 98vw;
   border-radius: 1rem;
 }
 
 #types {
-  padding-top: 8vh;
+  padding-top: 15.875%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,7 +71,9 @@
   span {
     color: white !important;
     border-radius: 0.8em;
-    padding: 0.3em 0.6em;
+    font-size: 70%;
+    padding: .4% 1.566%;
+    font-family: 'poppinsbold';
   }
 }
 
@@ -79,29 +82,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2vh;
 
   > span {
-    font-size: 1.5vh;
+    font-size: 70%;
     font-family: poppinsbold;
+  }
+  p{
+    padding-left: 5.5vw;
+    padding-right: 5.5vw;
+    font-size: 1.5vh;
+    color: #666666;
   }
 }
 
 #about {
+  span{
+    margin-top: 4.55%;
+    margin-bottom: 4.55%;
+  }
   p{
-    padding-left: 5.5vw;
-    padding-right: 5.5vw;
-    font-size: 1.5vh;
-    color: #666666;
+    margin-top: 4.55%;
+    margin-bottom: 4.55%;
   }
 }
 
 #stats {
-  p{
-    padding-left: 5.5vw;
-    padding-right: 5.5vw;
-    font-size: 1.5vh;
-    color: #666666;
+  > span{
+    margin-bottom: 4.55%;
   }
   > div {
     display: flex;
@@ -109,6 +116,7 @@
     flex-direction: row;
     padding-left: 5.5vw;
     padding-right: 5.5vw;
+    padding-bottom: 12%;
   }
 }
 
@@ -116,7 +124,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 2vh;
   color: #666666;
   width: 80vw;
 

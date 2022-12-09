@@ -15,11 +15,14 @@ export const Detail = ({list}) => {
     const {number} = useParams()
 
     useEffect(() => {
-        getDescription(number).then(r => {
-            let pokemon = list.find((pokemon) => pokemon.number == number)
-            pokemon.description = adaptDescription(r)
-            setPokemon(pokemon)
-        })
+        if(list.length> 0){
+            getDescription(number).then(r => {
+                let pokemon = list.find((pokemon) => pokemon.number == number)
+                pokemon.description = adaptDescription(r)
+                setPokemon(pokemon)
+            })
+        }
+
     }, [list, number])
 
     useEffect(() => {
@@ -85,7 +88,7 @@ export const Detail = ({list}) => {
                         <p>{pokemon.description}</p>
                     </div>
                     <div className={`${styles.section} color`} id={styles.stats}>
-                        <span> Stats</span>
+                        <span>Base Stats</span>
                         <div>
                             <div id={styles.attributes}>
                                 {keys().map((key) => <span key={key}>{key}</span>)}

@@ -344,3 +344,10 @@ background-color: #C1223920;
 a{
   text-decoration: none;
 }
+
+::-webkit-input-placeholder{
+  text-align: center;
+}
+:-moz-placeholder{
+  text-align: center;
+}
