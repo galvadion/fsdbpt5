@@ -21,3 +21,5 @@ export const adaptToDomain =(pokemon) => {
         }
     };
 }
+
+export const adaptDescription = (response) => response.flavor_text_entries.filter((text) => text.language.name == "en")[0].flavor_text;

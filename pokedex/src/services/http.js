@@ -13,3 +13,7 @@ export const fetchData = async () => {
     }
     return aux
 }
+
+export const getDescription = (number) =>
+    fetch(`${url}/pokemon-species/${number}`)
+        .then(response => response.json())
