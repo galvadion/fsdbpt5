@@ -12,8 +12,9 @@ function App() {
   const [list,setList] = useState([])
 
   useEffect(()=>{
-    let aux = []
+
     async function fetchData(){
+        let aux = []
         for (let number = 1; number < 151; number++) {
             await fetch(`${url}/pokemon/${number}`)
                 .then(response=>response.json())
@@ -21,9 +22,9 @@ function App() {
                     aux.push(adaptToDomain(pokemon))
                 })
         }
-        setList(aux)
+        return aux
     }
-    fetchData()
+    fetchData().then(pokemon=> setList(pokemon))
 },[])
 
   return (

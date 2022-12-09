@@ -7,12 +7,11 @@ import styles from "./home.module.scss"
 export const Home = ({list}) =>{
 
     const [sortedById, setSortedById] = useState(false)
-    const [search,setSearch] = useState("")
     const [result,setResult] = useState([])
 
     const filter = (e) => setResult(list.filter((pokemon)=> pokemon.name.toLowerCase().includes(e.target.value.toLowerCase())))
- 
-   
+
+    const applySort = (a,b) => sortedById ? a.number - b.number : a.name.localeCompare(b.name)
 
     useEffect(()=>{
         setResult(list)
@@ -24,7 +23,7 @@ export const Home = ({list}) =>{
             <input type="text"  onKeyUp={filter} placeholder="Buscar"/>
             <div id={styles.list}>
                 {
-                    result.map(pokemon => {
+                    result.sort(applySort).map(pokemon => {
                         return (
                             <Link key={pokemon.number} 
                                 to={`/${pokemon.number}`} 
