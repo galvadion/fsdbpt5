@@ -1,0 +1,346 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: poppins;
+  src: url("../public/font/Poppins-Medium.ttf");
+}
+
+@font-face {
+font-family: poppinsbold;
+src: url("../public/font/Poppins-Bold.ttf");
+}
+
+body {
+  margin:0;
+  font-family: poppins;
+  background-color: #F7F7F7;
+}
+
+.progress-bar {
+  border-radius: 10%;
+
+  width: 100%;
+  height: 0.75vh;
+
+  position: relative;
+  display: block;
+}
+
+.progress-bar > span {
+  border-radius: 2px;
+  display: block;
+  text-indent: -9999px;
+  height: 100%;
+}
+
+
+
+
+.grass{
+  border-color: #74CB48;
+  background-color: #74CB48;
+  .color{
+      color: #74CB48
+  }
+  > div {
+      background-color: #74CB48;
+  }
+}
+.grass.progress-bar{
+background-color: #74CB4820;
+>.color{
+  background-color: #74CB48;
+}
+}
+
+.fire{
+  border-color: #F57D31;
+  background-color: #F57D31;
+  .color{
+      color: #F57D31;
+  }
+  > div {
+      background-color: #F57D31;
+  }
+}
+.fire.progress-bar{
+background-color: #F57D3120;
+>.color{
+  background-color: #F57D31;
+}
+}
+.rock{
+  border-color: #B69E31;
+  background-color: #B69E31;
+  .color{
+      color: #B69E31;
+  }
+  > div {
+      background-color: #B69E31;
+  }
+}
+.rock.progress-bar{
+background-color: #B69E3120;
+>.color{
+  background-color: #B69E31;
+}
+}
+
+.ghost{
+  border-color: #70559B;
+  background-color: #70559B;
+  .color{
+      color: #70559B;
+  }
+  > div {
+      background-color: #70559B;
+  }
+}
+.ghost.progress-bar{
+background-color: #70559B20;
+>.color{
+  background-color: #70559B;
+}
+}
+
+.steel{
+  border-color: #B7B9D0;
+  background-color: #B7B9D0;
+  .color{
+      color: #B7B9D0;
+  }
+  > div {
+      background-color: #B7B9D0;
+  }
+}
+.steel.progress-bar{
+ background-color: #B7B9D0020;
+ >.color{
+   background-color: #B7B9D0;
+ }
+}
+
+.water{
+  border-color: #6493EB;
+  background-color: #6493EB;
+  .color{
+      color: #6493EB;
+  }
+  > div {
+      background-color: #6493EB;
+  }
+}
+.water.progress-bar{
+background-color: #6493EB20;
+>.color{
+  background-color: #6493EB;
+}
+}
+
+.psychic{
+  border-color: #FB5584;
+  background-color: #FB5584;
+  .color{
+      color: #FB5584;
+  }
+  > div {
+      background-color: #FB5584;
+  }
+}
+.psychic.progress-bar{
+background-color: #FB558420;
+>.color{
+  background-color: #FB5584;
+}
+}
+
+.ice{
+  border-color: #9AD6DF;
+  background-color: #9AD6DF;
+  .color{
+      color: #9AD6DF;
+  }
+  > div {
+      background-color: #9AD6DF;
+  }
+}
+.ice.progress-bar{
+background-color: #9AD6DF20;
+>.color{
+  background-color: #9AD6DF;
+}
+}
+
+.dark{
+  border-color: #75574C;
+  background-color: #75574C;
+  .color{
+      color: #75574C;
+  }
+  > div {
+      background-color: #75574C;
+  }
+}
+.dark.progress-bar{
+background-color: #75574C20;
+>.color{
+  background-color: #75574C;
+}
+}
+
+
+.fairy{
+  border-color: #E69EAC;
+  background-color: #E69EAC;
+  .color{
+      color: #E69EAC;
+  }
+  > div {
+      background-color: #E69EAC;
+  }
+}
+.fairy.progress-bar{
+background-color: #E69EAC20;
+>.color{
+  background-color: #E69EAC;
+}
+}
+
+.normal{
+  border-color: #AAA67F;
+  background-color: #AAA67F;
+  .color{
+      color: #AAA67F;
+  }
+  > div {
+      background-color: #AAA67F;
+  }
+}
+.normal.progress-bar{
+background-color: #AAA67F20;
+>.color{
+  background-color: #AAA67F;
+}
+}
+
+.flying{
+  border-color: #A891EC;
+  background-color: #A891EC;
+  .color{
+      color: #A891EC;
+  }
+  > div {
+      background-color: #A891EC;
+  }
+}
+.flying.progress-bar{
+background-color: #A891EC20;
+>.color{
+  background-color: #A891EC;
+}
+}
+
+.poison{
+  border-color: #A43E9E;
+  background-color: #A43E9E;
+  .color{
+      color: #A43E9E;
+  }
+  > div {
+      background-color: #A43E9E;
+  }
+}
+.poison.progress-bar{
+background-color: #A43E9E20;
+>.color{
+  background-color: #A43E9E;
+}
+}
+
+.ground{
+  border-color: #DEC16B;
+  background-color: #DEC16B;
+  .color{
+      color: #DEC16B;
+  }
+  > div {
+      background-color: #DEC16B;
+  }
+}
+.ground.progress-bar{
+background-color: #DEC16B20;
+>.color{
+  background-color: #DEC16B;
+}
+}
+
+.bug{
+  border-color: #A7B723;
+  background-color: #A7B723;
+  .color{
+      color: #A7B723;
+  }
+  > div {
+      background-color: #A7B723;
+  }
+}
+.bug.progress-bar{
+background-color: #A7B72320;
+>.color{
+  background-color: #A7B723;
+}
+}
+
+.electric{
+  border-color: #F9CF30;
+  background-color: #F9CF30;
+  .color{
+      color: #F9CF30;
+  }
+  > div {
+      background-color: #F9CF30;
+  }
+}
+.electric.progress-bar{
+background-color: #F9CF3020;
+>.color{
+  background-color: #F9CF30;
+}
+}
+
+.dragon{
+  border-color: #4037FF;
+  background-color: #4037FF;
+  .color{
+      color: #4037FF;
+  }
+  > div {
+      background-color: #4037FF;
+  }
+}
+.dragon.progress-bar{
+background-color: #4037FF20;
+>.color{
+  background-color: #4037FF;
+}
+}
+
+.fighting{
+  border-color: #C12239;
+  background-color: #C12239;
+  .color{
+      color: #C12239;
+  }
+  > div {
+      background-color: #C12239;
+  }
+}
+.fighting.progress-bar{
+background-color: #C1223920;
+>.color{
+  background-color: #C12239;
+}
+}
+
+a{
+  text-decoration: none;
+}

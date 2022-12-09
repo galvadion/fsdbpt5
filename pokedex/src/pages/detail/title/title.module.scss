@@ -1,0 +1,58 @@
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 6vh;
+    justify-content: center;
+    color: white;
+  
+    img {
+      filter: brightness(0) invert(1);;
+    }
+  
+    a {
+      height: 100%;
+      display: flex;
+  
+      img {
+        align-self: center;
+        height: 3vh;
+      }
+    }
+  
+    h1 {
+      margin-left: 4vw;
+      font-size: 3vh;
+    }
+  
+    span {
+      margin-left: auto;
+      color: white;
+      align-self: center;
+      font-size: 1.5vh;
+    }
+  
+  }
+  
+  @media (orientation: landscape) {
+  
+    .title {
+  
+      a {
+        img {
+          height: 3vw;
+        }
+      }
+  
+      h1 {
+        font-size: 3vw;
+      }
+  
+      span {
+        font-size: 1.5vw;
+      }
+  
+    }
+  
+  }
+  
